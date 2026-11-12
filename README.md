@@ -67,16 +67,16 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
 </p>
 ```
 
-Matching the design's spacing exactly taught me how Figma strokes differ from CSS borders. Figma draws the card's 1px stroke inside the frame without moving the content, but a CSS border takes up space. To keep the 24px inset from the design, the padding is 23px plus the 1px border.
+Matching the design's spacing exactly taught me how Figma strokes differ from CSS borders. Figma draws the card's 0.0625rem stroke inside the frame without moving the content, but a CSS border takes up space. To keep the 1.5rem inset from the design, the padding is 1.4375rem plus the 0.0625rem border.
 
 ```css
 .blog-card {
-  max-width: 384px;
-  /* 1px border + 23px = the 24px inset in the design */
-  padding: 23px;
-  border: 1px solid var(--color-gray-950);
-  border-radius: 20px;
-  box-shadow: 8px 8px 0 var(--color-gray-950);
+  max-width: 24rem;
+  /* 0.0625rem border + 1.4375rem = the 1.5rem inset in the design */
+  padding: calc(1.5rem - 0.0625rem);
+  border: 0.0625 solid var(--color-gray-950);
+  border-radius: 1.25rem;
+  box-shadow: 0.5rem 0.5rem 0 var(--color-gray-950);
 }
 ```
 
@@ -89,8 +89,8 @@ Every title on the page is an `h2`, so I added a visually hidden `h1` to give th
 }
 
 .blog-card__link:focus-visible {
-  outline: 2px solid var(--color-gray-950);
-  outline-offset: 4px;
+  outline: 0.125rem solid var(--color-gray-950);
+  outline-offset: 0.25rem;
 }
 ```
 
